@@ -28,11 +28,11 @@ form.addEventListener("submit", async (event) => {
 
 const totalConvertDivisa = (value, data) => {
   const valueDivisa = data[0].valor;
-  const totalSwap = value / valueDivisa;
-  return totalSwap.toFixed(2);
+  const totalRate = value / valueDivisa;
+  return totalRate.toFixed(2);
 };
 
-const renderSwap = (total) => {
+const renderRate = (total) => {
   const resultString = total
     ? `Total: ${parseFloat(total)}`
     : "Ingrese un monto y seleccione una divisa.";
@@ -54,12 +54,12 @@ const destroyChart = () => {
 };
 
 const totalRenderHtml = async (value, data) => {
-  renderSwapChart(value, data);
+  renderRateChart(value, data);
 };
 
-const renderSwapChart = (value, data) => {
+const renderRateChart = (value, data) => {
   if (!data || data.length === 0) {
-    renderSwap(0);
+    renderRate(0);
     destroyChart();
     return;
   }
@@ -67,7 +67,7 @@ const renderSwapChart = (value, data) => {
   const lastTenDaysData = data.slice(-10);
 
   const total = totalConvertDivisa(value, lastTenDaysData);
-  renderSwap(total);
+  renderRate(total);
 
   const dateLabels = getDateDivisa(lastTenDaysData);
   const currencyValues = getValueDivisa(lastTenDaysData);
