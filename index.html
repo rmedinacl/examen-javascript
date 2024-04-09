@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G64 Conversor Monedas RMedina</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+
+</head>
+
+<body class="text-center">
+    <hr />
+    <h1 class="text-center text-black">Exchange Rate a Pesos Chilenos</h1>
+    <p>Desafio Latam - Examen JS para la WEB G64</p>
+    <hr />
+    <main class="my-0 py-0">
+        <section class="d-flex justify-content-center align-items-center bg-dark m-0">
+            <div class="container p-4">
+                <form class="text-center box" id="convertidor_monedas">
+                    <label class="text-white" for="input">Pesos CLP</label>
+                    <input type="text" name="value" placeholder="Ingrese importe CLP" class="form-control my-2" />
+                    <p class="text-white m-0">Divisa a convertir:</p>
+                    <select name="divisa" class="form-select">
+                        <option value="">Seleccione una moneda o divisa</option>
+                        <option value="dolar">Dolar</option>
+                        <option value="euro">Euro</option>
+                        <option value="uf">UF</option>
+                        <option value="utm">Unidad Tributaria Mensual (UTM)</option>
+                        <option value="ivp">Indice de valor promedio (IVP)</option>
+                    </select>
+                    <button type="submit" class="btn btn-block btn-primary my-3">
+                        Convertir
+                    </button>
+                </form>
+                <div class="text-center my-1 bg-warning text-danger">
+                    <h4 id="totalConverter"></h4>
+                </div>
+            </div>
+        </section>
+
+        <div class="d-flex justify-content-center align-items-center my-1 p-0">
+            <canvas id="myChart"></canvas>
+        </div>
+    </main>
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/f5bdbb41e0.js" crossorigin="anonymous"></script>
+
+    <!-- CDN Plugins Chart Js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Bootstrap JS -->
+
+    <script src="./assets/js/script.js" type="module"></script>
+</body>
+
+</html>
